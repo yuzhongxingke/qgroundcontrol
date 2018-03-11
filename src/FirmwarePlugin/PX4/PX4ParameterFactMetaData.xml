@@ -9240,15 +9240,16 @@ This is used for gathering replay logs for the ekf2 module</short_desc>
     </parameter>
     <parameter default="0" name="UAVCAN_ENABLE" type="INT32">
       <short_desc>UAVCAN mode</short_desc>
-      <long_desc>0 - UAVCAN disabled. 1 - Basic support for UAVCAN actuators and sensors. 2 - Full support for dynamic node ID allocation and firmware update. 3 - Sets the motor control outputs to UAVCAN and enables support for dynamic node ID allocation and firmware update.</long_desc>
+      <long_desc>0 - UAVCAN disabled. 1 - Enables support for UAVCAN sensors without dynamic node ID allocation and firmware update. 2 - Enables support for UAVCAN sensors with dynamic node ID allocation and firmware update. 3 - Enables support for UAVCAN sensors and actuators with dynamic node ID allocation and firmware update. Also sets the motor control outputs to UAVCAN.</long_desc>
       <min>0</min>
       <max>3</max>
       <reboot_required>true</reboot_required>
       <scope>modules/uavcan</scope>
       <values>
         <value code="0">Disabled</value>
-        <value code="2">Only Sensors</value>
-        <value code="3">Sensors and Motors</value>
+        <value code="1">Sensors Manual Config</value>
+        <value code="2">Sensors Automatic Config</value>
+        <value code="3">Sensors and Actuators (ESCs) Automatic Config</value>
       </values>
     </parameter>
     <parameter default="1" name="UAVCAN_ESC_IDLT" type="INT32">
